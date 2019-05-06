@@ -1,15 +1,16 @@
 {
   "name": "exam-installer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
+  "repository": "NimaBoscarino/exam-installer",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
     "exam-installer": "bin/index.js"
   },
-  "author": "NimaBoscarino",
+  "author": "Nima Boscarino",
   "license": "ISC",
   "dependencies": {
     "chalk": "^2.4.2",
