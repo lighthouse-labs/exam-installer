@@ -1,4 +1,5 @@
 #! /usr/bin/env node
+
 var shell = require("shelljs");
 const fs = require('fs');
 const chalk = require('chalk');
@@ -6,11 +7,12 @@ const chalk = require('chalk');
 const username = process.argv[2]
 const testId = process.argv[3]
 
-shell.exec("git clone git@github.com:lighthouse-labs/assessment-exam-student.git")
-shell.cd("assessment-exam-student")
+shell.exec(`git clone git@github.com:lighthouse-labs/assessment-exam-student.git ${testId}`)
+shell.cd(testId)
 shell.exec(`echo ${username} >> .student-id`)
-shell.exec("npm install --no-bin-links")
-shell.exec("npm run start-exam", testId)
+console.log("Beginning installation... this will take a minute ⏱")
+shell.exec("npm install --no-bin-links", {silent: true})
+shell.exec(`npm run start-exam ${testId}`)
 shell.exec("npm run question 0") // run first question for verification
 
 console.log(`
@@ -18,7 +20,7 @@ console.log(`
 
 You can now open up the ${chalk.blue('assessment-exam-student')} folder in your text editor.
 
-Then, ${chalk.blue('cd')} into ${chalk.blue('assessment-exam-student')}.
+Then, ${chalk.blue('cd')} into ${chalk.blue(testId)}.
 
 To answer the questions, edit the code in the ${chalk.blue('answers')} folder.
 
