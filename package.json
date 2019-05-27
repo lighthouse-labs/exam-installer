@@ -1,7 +1,7 @@
 {
   "name": "exam-installer",
-  "version": "1.0.2",
-  "description": "",
+  "version": "1.0.3",
+  "description": "A tool for easy installations of Lighthouse Labs' exams.",
   "main": "index.js",
   "repository": "NimaBoscarino/exam-installer",
   "scripts": {
